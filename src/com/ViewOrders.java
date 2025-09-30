@@ -98,6 +98,11 @@ public class ViewOrders extends javax.swing.JFrame {
         btnCancelledOrders.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
         btnCancelledOrders.setForeground(new java.awt.Color(255, 255, 255));
         btnCancelledOrders.setText("Cancelled Orders");
+        btnCancelledOrders.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelledOrdersActionPerformed(evt);
+            }
+        });
 
         jButton4.setBackground(new java.awt.Color(255, 0, 0));
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
@@ -168,12 +173,16 @@ public class ViewOrders extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void btnDeliveredOrdersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeliveredOrdersActionPerformed
-       new DeliveredOrders().setVisible(true);
+       new DeliveredOrders(this.customerCollection).setVisible(true);
     }//GEN-LAST:event_btnDeliveredOrdersActionPerformed
 
     private void btnProcessingOrdersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcessingOrdersActionPerformed
-      
+       new ProcessingOrders(this.customerCollection).setVisible(true);
     }//GEN-LAST:event_btnProcessingOrdersActionPerformed
+
+    private void btnCancelledOrdersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelledOrdersActionPerformed
+      new CancelledOrders(this.customerCollection).setVisible(true);
+    }//GEN-LAST:event_btnCancelledOrdersActionPerformed
 
     /**
      * @param args the command line arguments

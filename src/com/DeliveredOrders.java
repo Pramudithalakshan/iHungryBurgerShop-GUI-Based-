@@ -4,17 +4,25 @@
  */
 package com;
 
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author pramuditha-lakshan
  */
 public class DeliveredOrders extends javax.swing.JFrame {
-
+    private CustomerCollection customerCollection;
     /**
      * Creates new form DeliveredOrders
      */
-    public DeliveredOrders() {
+    public DeliveredOrders(CustomerCollection customerCollection) {
         initComponents();
+        this.customerCollection = customerCollection;
+         loadTable();
+    }
+    private void loadTable(){
+          DefaultTableModel model =  customerCollection.loadOrders(1);
+           tableDeliveredOrders.setModel(model);
     }
 
     /**
@@ -30,7 +38,7 @@ public class DeliveredOrders extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tableDeliveredOrders = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -61,26 +69,26 @@ public class DeliveredOrders extends javax.swing.JFrame {
                 .addGap(35, 35, 35))
         );
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tableDeliveredOrders.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Order Id", "Customer Id", "Name", "Order QTY", "Total"
+                "Order Id", "Customer Id", "Order QTY", "Total"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tableDeliveredOrders);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -118,6 +126,6 @@ public class DeliveredOrders extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tableDeliveredOrders;
     // End of variables declaration//GEN-END:variables
 }

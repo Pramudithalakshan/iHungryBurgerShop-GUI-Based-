@@ -95,4 +95,18 @@ public class CustomerCollection {
         return null;
 
     }
+
+    public DefaultTableModel loadOrders(int status) {
+        String[] columns = {"Order ID", "Customer ID", "Order Qty", "Total"};
+        DefaultTableModel model = new DefaultTableModel(columns, 0);
+
+        for (Customer c : customerArray) {
+            if (c.getStatus() == status) {
+                Object[] row = {c.getOrderID(), c.getCustomerID(), c.getQty(), c.getQty() * UNITE_PRICE};
+                model.addRow(row);
+            }
+        }
+
+        return model;
+    }
 }
