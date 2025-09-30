@@ -109,4 +109,27 @@ public class CustomerCollection {
 
         return model;
     }
+    
+    public boolean updateCustomer(Customer customer){
+        int index=indexOf(customer);
+        customerArray[index]=customer;
+        return true;
+    }
+    public int indexOf(Customer customer){
+        for (int i = 0; i < customerArray.length; i++) {
+            if(customerArray[i].getOrderID().equalsIgnoreCase(customer.getOrderID())){
+                return i;
+            }
+        }
+        return -1;
+    }  
+    
+    public int checkOrderStatus(String orId){
+        for (int i = 0; i < customerArray.length; i++) {
+            if(customerArray[i].getOrderID().equals(orId)){
+              return customerArray[i].getStatus();
+            }
+        }
+        return -1;
+    }
 }

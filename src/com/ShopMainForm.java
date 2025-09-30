@@ -41,7 +41,7 @@ public class ShopMainForm extends javax.swing.JFrame {
         btnSearchCus = new javax.swing.JButton();
         btnSearchOrder = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 36)); // NOI18N
@@ -109,6 +109,11 @@ public class ShopMainForm extends javax.swing.JFrame {
         btnUpdateOrder.setFont(new java.awt.Font("Liberation Sans", 1, 24)); // NOI18N
         btnUpdateOrder.setForeground(new java.awt.Color(255, 255, 255));
         btnUpdateOrder.setText("Update Order Details");
+        btnUpdateOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateOrderActionPerformed(evt);
+            }
+        });
 
         jButton5.setBackground(new java.awt.Color(255, 0, 0));
         jButton5.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
@@ -222,6 +227,10 @@ public class ShopMainForm extends javax.swing.JFrame {
     private void btnPlaceOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlaceOrderActionPerformed
       new PlaceOrder(this.customerCollection).setVisible(true);
     }//GEN-LAST:event_btnPlaceOrderActionPerformed
+
+    private void btnUpdateOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateOrderActionPerformed
+       new UpdateOrder(customerCollection).setVisible(true);
+    }//GEN-LAST:event_btnUpdateOrderActionPerformed
 
     /**
      * @param args the command line arguments
