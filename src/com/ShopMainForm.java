@@ -17,6 +17,8 @@ public class ShopMainForm extends javax.swing.JFrame {
         initComponents();
         this.customerCollection = customerCollection;
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -31,11 +33,13 @@ public class ShopMainForm extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnPlaceOrder = new javax.swing.JButton();
+        btnSearchBestCus = new javax.swing.JButton();
+        btnViewOrder = new javax.swing.JButton();
+        btnUpdateOrder = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
+        btnSearchCus = new javax.swing.JButton();
+        btnSearchOrder = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -66,30 +70,45 @@ public class ShopMainForm extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 473, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(255, 204, 204));
 
-        jButton1.setBackground(new java.awt.Color(255, 0, 0));
-        jButton1.setFont(new java.awt.Font("Liberation Sans", 1, 24)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Place Order");
+        btnPlaceOrder.setBackground(new java.awt.Color(255, 0, 0));
+        btnPlaceOrder.setFont(new java.awt.Font("Liberation Sans", 1, 24)); // NOI18N
+        btnPlaceOrder.setForeground(new java.awt.Color(255, 255, 255));
+        btnPlaceOrder.setText("Place Order");
+        btnPlaceOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPlaceOrderActionPerformed(evt);
+            }
+        });
 
-        jButton2.setBackground(new java.awt.Color(255, 0, 0));
-        jButton2.setFont(new java.awt.Font("Liberation Sans", 1, 24)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Search");
+        btnSearchBestCus.setBackground(new java.awt.Color(255, 0, 0));
+        btnSearchBestCus.setFont(new java.awt.Font("Liberation Sans", 1, 24)); // NOI18N
+        btnSearchBestCus.setForeground(new java.awt.Color(255, 255, 255));
+        btnSearchBestCus.setText("Search Best Customer");
+        btnSearchBestCus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchBestCusActionPerformed(evt);
+            }
+        });
 
-        jButton3.setBackground(new java.awt.Color(255, 0, 0));
-        jButton3.setFont(new java.awt.Font("Liberation Sans", 1, 24)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("View Order");
+        btnViewOrder.setBackground(new java.awt.Color(255, 0, 0));
+        btnViewOrder.setFont(new java.awt.Font("Liberation Sans", 1, 24)); // NOI18N
+        btnViewOrder.setForeground(new java.awt.Color(255, 255, 255));
+        btnViewOrder.setText("View Order");
+        btnViewOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewOrderActionPerformed(evt);
+            }
+        });
 
-        jButton4.setBackground(new java.awt.Color(255, 0, 0));
-        jButton4.setFont(new java.awt.Font("Liberation Sans", 1, 24)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Update Order Details");
+        btnUpdateOrder.setBackground(new java.awt.Color(255, 0, 0));
+        btnUpdateOrder.setFont(new java.awt.Font("Liberation Sans", 1, 24)); // NOI18N
+        btnUpdateOrder.setForeground(new java.awt.Color(255, 255, 255));
+        btnUpdateOrder.setText("Update Order Details");
 
         jButton5.setBackground(new java.awt.Color(255, 0, 0));
         jButton5.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
@@ -101,19 +120,41 @@ public class ShopMainForm extends javax.swing.JFrame {
             }
         });
 
+        btnSearchCus.setBackground(new java.awt.Color(255, 0, 0));
+        btnSearchCus.setFont(new java.awt.Font("Liberation Sans", 1, 24)); // NOI18N
+        btnSearchCus.setForeground(new java.awt.Color(255, 255, 255));
+        btnSearchCus.setText("Search Customer");
+        btnSearchCus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchCusActionPerformed(evt);
+            }
+        });
+
+        btnSearchOrder.setBackground(new java.awt.Color(255, 0, 0));
+        btnSearchOrder.setFont(new java.awt.Font("Liberation Sans", 1, 24)); // NOI18N
+        btnSearchOrder.setForeground(new java.awt.Color(255, 255, 255));
+        btnSearchOrder.setText("Search Order");
+        btnSearchOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchOrderActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(57, Short.MAX_VALUE)
+                .addContainerGap(77, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(btnUpdateOrder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnPlaceOrder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnSearchBestCus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnViewOrder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnSearchCus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnSearchOrder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(157, 157, 157))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addComponent(jButton5)
@@ -123,14 +164,18 @@ public class ShopMainForm extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(82, 82, 82)
-                .addComponent(jButton1)
-                .addGap(71, 71, 71)
-                .addComponent(jButton2)
-                .addGap(83, 83, 83)
-                .addComponent(jButton3)
-                .addGap(87, 87, 87)
-                .addComponent(jButton4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnPlaceOrder)
+                .addGap(29, 29, 29)
+                .addComponent(btnSearchBestCus)
+                .addGap(49, 49, 49)
+                .addComponent(btnSearchCus)
+                .addGap(49, 49, 49)
+                .addComponent(btnSearchOrder)
+                .addGap(56, 56, 56)
+                .addComponent(btnViewOrder)
+                .addGap(64, 64, 64)
+                .addComponent(btnUpdateOrder)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21))
         );
@@ -151,11 +196,32 @@ public class ShopMainForm extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
        dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void btnSearchBestCusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchBestCusActionPerformed
+      new SearchbestCustomer(this.customerCollection).setVisible(true);
+    }//GEN-LAST:event_btnSearchBestCusActionPerformed
+
+    private void btnSearchCusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchCusActionPerformed
+      new SearchCustomer(this.customerCollection).setVisible(true);
+    }//GEN-LAST:event_btnSearchCusActionPerformed
+
+    private void btnSearchOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchOrderActionPerformed
+      new SearchOrder(this.customerCollection).setVisible(true);
+    }//GEN-LAST:event_btnSearchOrderActionPerformed
+
+    private void btnViewOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewOrderActionPerformed
+      new ViewOrders(this.customerCollection).setVisible(true);
+    }//GEN-LAST:event_btnViewOrderActionPerformed
+
+    private void btnPlaceOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlaceOrderActionPerformed
+      new PlaceOrder(this.customerCollection).setVisible(true);
+    }//GEN-LAST:event_btnPlaceOrderActionPerformed
 
     /**
      * @param args the command line arguments
@@ -163,10 +229,12 @@ public class ShopMainForm extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton btnPlaceOrder;
+    private javax.swing.JButton btnSearchBestCus;
+    private javax.swing.JButton btnSearchCus;
+    private javax.swing.JButton btnSearchOrder;
+    private javax.swing.JButton btnUpdateOrder;
+    private javax.swing.JButton btnViewOrder;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

@@ -6,6 +6,14 @@ public class Customer {
     private String customerID;
     private int qty;
     private int status;
+
+    public Customer(String orderID, String customerID, int qty, int status) {
+        setOrderID(orderID);
+        setCustomerID(customerID);
+        setQty(qty);
+        setStatus(status);
+    }
+    
     
 
     /**
