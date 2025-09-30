@@ -60,30 +60,39 @@ public class CustomerCollection {
     }
 
     public DefaultTableModel loadCustomerTable(Customer[] customer) {
-        for (int i = 0; i < customer.length; i++) {   
-                String[] columns = {"Order ID", "order Qty", "Total"};
-                DefaultTableModel model = new DefaultTableModel(columns, 0);
+        for (int i = 0; i < customer.length; i++) {
+            String[] columns = {"Order ID", "order Qty", "Total"};
+            DefaultTableModel model = new DefaultTableModel(columns, 0);
 
-                for (Customer c : customerArray) {
-                    Object[] row = {c.getOrderID(), c.getQty(), c.getQty() * UNITE_PRICE};
-                    model.addRow(row);
-                }
+            for (Customer c : customerArray) {
+                Object[] row = {c.getOrderID(), c.getQty(), c.getQty() * UNITE_PRICE};
+                model.addRow(row);
+            }
 
-                return model;
-            
+            return model;
+
         }
-             return null;
+        return null;
     }
 
     public Customer[] searchCustomer(String id) {
         Customer[] tempArray = new Customer[customerArray.length];
-        for (int i = 0;i<customerArray.length;i++) {
+        for (int i = 0; i < customerArray.length; i++) {
             if (customerArray[i].getOrderID().equalsIgnoreCase(id)) {
-                 tempArray[i]=customerArray[i];
+                tempArray[i] = customerArray[i];
             }
         }
-        
+
         return tempArray;
     }
 
+    public Customer searchOrder(String orId) {
+        for (Customer customer : customerArray) {
+            if (customer.getOrderID().equalsIgnoreCase(orId)) {
+                return customer;
+            }
+        }
+        return null;
+
+    }
 }
